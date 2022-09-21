@@ -6,8 +6,11 @@ function Book(props) {
   const { title, author } = props;
   return (
     <div className={style['book-wrapper']}>
-      <h1>{title}</h1>
-      <h2>{author}</h2>
+      <div>
+        <h1>{title}</h1>
+        <h2>{author}</h2>
+      </div>
+      <button type="submit">Delete</button>
     </div>
   );
 }
