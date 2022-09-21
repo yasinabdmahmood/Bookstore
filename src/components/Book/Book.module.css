@@ -1,0 +1,13 @@
+.book-wrapper {
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.book-wrapper h1 {
+  font-size: 2rem;
+}
+
+.book-wrapper h2 {
+  font-size: 1.5rem;
+}
