@@ -14,11 +14,8 @@ export default function bookReducer(state = initialState, action) {
       },
     ];
 
-    case REMOVE_BOOK: return (
-      state.filter((book) => {
-        book.name !== action.name;
-      })
-    );
+    case REMOVE_BOOK:
+      return state.filter((book) => book.name !== action.name);
     default: return state;
   }
 }
