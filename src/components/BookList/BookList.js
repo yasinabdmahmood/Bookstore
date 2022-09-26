@@ -14,7 +14,7 @@ function BookList() {
       <ul className={style['book-list']}>
         {books.map((book) => (
           <li key={book.id}>
-            <Book title={book.title} author={book.author} />
+            <Book title={book.title} author={book.author} id={book.id} />
           </li>
         ))}
       </ul>

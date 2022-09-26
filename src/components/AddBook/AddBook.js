@@ -6,13 +6,16 @@ import  { useDispatch } from "react-redux";
 
 function AddBook() {
   const dispatch = useDispatch();
-  const handleClick = () =>{
+  const handleClick = (e) =>{
+    e.preventDefault()
     const book ={
       id: uuidv4(),
       title,
       author,
     }
     dispatch(addBook(book))
+    setTitle('');
+    setAuthor('');
   }
   const [title,setTitle] = useState('');
   const [author,setAuthor] = useState('');
@@ -32,7 +35,9 @@ function AddBook() {
         value={author} 
         placeholder='author'
         onChange={(e)=>{setAuthor(e.target.value)}}/>
-        <input type="submit" value="Add Book" onClick={handleClick} />
+        <button  onClick={handleClick}>
+           Add book
+        </button>
       </form>
     </div>
   );
