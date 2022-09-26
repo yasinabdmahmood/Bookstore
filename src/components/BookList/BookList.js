@@ -7,7 +7,6 @@ import style from './BookList.module.css';
 
 function BookList() {
   const books = useSelector((state) => state.books);
-  console.log(books)
 
   return (
     <div className={style['book-list-wrapper']}>
