@@ -1,4 +1,4 @@
-export const CHECK_STATUS = 'CHECK_STATUS';
+export const CHECK_STATUS = 'bookstore/catagories/CHECK_STATUS';
 
 const initialState = [];
 
