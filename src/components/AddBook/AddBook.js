@@ -11,9 +11,10 @@ function AddBook() {
   const handleClick = (e) => {
     e.preventDefault();
     const book = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       author,
+      category: 'action',
     };
     dispatch(addBook(book));
     setTitle('');
