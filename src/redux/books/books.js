@@ -8,9 +8,7 @@ export const getBooks = createAsyncThunk(
   'books/getAllBooks/',
   async () => {
     try {
-      const response = axios.get(`${baseUrl}/apps/${apiKey}/books/`);
-
-      return response;
+      return axios.get(`${baseUrl}/apps/${apiKey}/books/`);
     } catch (error) {
       return error;
     }
@@ -21,8 +19,7 @@ export const addBook = createAsyncThunk(
   'books/addBook',
   async (book) => {
     try {
-      const { data } = axios.post(`${baseUrl}/apps/${apiKey}/books`, book);
-      return data;
+      return axios.post(`${baseUrl}/apps/${apiKey}/books`, book);
     } catch (error) {
       return error;
     }
@@ -31,8 +28,7 @@ export const addBook = createAsyncThunk(
 
 export const removeBook = createAsyncThunk('books/removeBook/', async (id) => {
   try {
-    const response = axios.delete(`${baseUrl}/apps/${apiKey}/books/${id}`);
-    return response;
+    return axios.delete(`${baseUrl}/apps/${apiKey}/books/${id}`);
   } catch (error) {
     return error;
   }
@@ -45,21 +41,15 @@ export const booksSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder.addCase(getBooks.fulfilled, (state, action) => {
-      let data = [];
-      if (action.payload.data === '') {
-        data = [];
-      } else {
-        const books = Object.keys(action.payload.data).map((key) => {
-          const book = action.payload.data[key][0];
+      const books = Object.keys(action.payload.data).map((key) => {
+        const book = action.payload.data[key][0];
 
-          return {
-            id: key,
-            ...book,
-          };
-        });
-        data = books;
-      }
-      return data;
+        return {
+          id: key,
+          ...book,
+        };
+      });
+      return books;
     });
 
     builder.addCase(addBook.fulfilled, (state, action) => {
