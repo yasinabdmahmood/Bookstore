@@ -24,7 +24,6 @@ function BookList() {
         ))}
       </ul>
       <AddBook />
-
     </div>
   );
 }
