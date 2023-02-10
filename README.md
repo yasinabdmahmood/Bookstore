@@ -12,7 +12,7 @@ Bookstore is an app that lets you list you favorate books with thier respective 
 
 ## Live Demo 
 
-[Comining soon](https://bookstore-yaseen.netlify.app/)
+[Go live](https://bookstore-yaseen.netlify.app/)
 
 
 
